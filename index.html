@@ -1,183 +1,644 @@
-<!--
-███╗   ██╗ ██████╗ ██╗   ██╗██╗   ██╗███████╗███╗   ██╗    ████████╗██╗  ██╗ █████╗ ██╗    ████████╗██████╗ ██╗   ██╗███╗   ██╗ ██████╗ 
-████╗  ██║██╔════╝ ██║   ██║╚██╗ ██╔╝██╔════╝████╗  ██║    ╚══██╔══╝██║  ██║██╔══██╗██║    ╚══██╔══╝██╔══██╗██║   ██║████╗  ██║██╔════╝ 
-██╔██╗ ██║██║  ███╗██║   ██║ ╚████╔╝ █████╗  ██╔██╗ ██║       ██║   ███████║███████║██║       ██║   ██████╔╝██║   ██║██╔██╗ ██║██║  ███╗
-██║╚██╗██║██║   ██║██║   ██║  ╚██╔╝  ██╔══╝  ██║╚██╗██║       ██║   ██╔══██║██╔══██║██║       ██║   ██╔══██╗██║   ██║██║╚██╗██║██║   ██║
-██║ ╚████║╚██████╔╝╚██████╔╝   ██║   ███████╗██║ ╚████║       ██║   ██║  ██║██║  ██║██║       ██║   ██║  ██║╚██████╔╝██║ ╚████║╚██████╔╝
-╚═╝  ╚═══╝ ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚═╝  ╚═══╝       ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝       ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ 
--->
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>NTT | Thông tin thanh toán</title>
-        <link rel="shortcut icon" href="https://upanh.cf/z4zd63kou3.jpg">
-        <link rel="icon" type="image/png" href="https://upanh.cf/z4zd63kou3.jpg">
-        <link href="/assets/css/style.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
-        <script src="/assets/js/jquery.min.js"></script>
-        <script src="/assets/js/sweetalert2.all.min.js"></script>
-        <script>
-            function copy(element) 
-            {
-                var $temp = $("<input>");
-                $("body").append($temp);
-                $temp.val($(element).text()).select();
-                document.execCommand("copy");
-                $temp.remove();
-                Swal.fire("Thông báo", "Copy thành công!", "success");
-            }
-        </script>
-          	<script type='text/javascript'>
-                //<![CDATA[
-                shortcut={all_shortcuts:{},add:function(a,b,c){var d={type:"keydown",propagate:!1,disable_in_input:!1,target:document,keycode:!1};if(c)for(var e in d)"undefined"==typeof c[e]&&(c[e]=d[e]);else c=d;d=c.target,"string"==typeof c.target&&(d=document.getElementById(c.target)),a=a.toLowerCase(),e=function(d){d=d||window.event;if(c.disable_in_input){var e;d.target?e=d.target:d.srcElement&&(e=d.srcElement),3==e.nodeType&&(e=e.parentNode);if("INPUT"==e.tagName||"TEXTAREA"==e.tagName)return}d.keyCode?code=d.keyCode:d.which&&(code=d.which),e=String.fromCharCode(code).toLowerCase(),188==code&&(e=","),190==code&&(e=".");var f=a.split("+"),g=0,h={"`":"~",1:"!",2:"@",3:"#",4:"$",5:"%",6:"^",7:"&",8:"*",9:"(",0:")","-":"_","=":"+",";":":","'":'"',",":"<",".":">","/":"?","\\":"|"},i={esc:27,escape:27,tab:9,space:32,"return":13,enter:13,backspace:8,scrolllock:145,scroll_lock:145,scroll:145,capslock:20,caps_lock:20,caps:20,numlock:144,num_lock:144,num:144,pause:19,"break":19,insert:45,home:36,"delete":46,end:35,pageup:33,page_up:33,pu:33,pagedown:34,page_down:34,pd:34,left:37,up:38,right:39,down:40,f1:112,f2:113,f3:114,f4:115,f5:116,f6:117,f7:118,f8:119,f9:120,f10:121,f11:122,f12:123},j=!1,l=!1,m=!1,n=!1,o=!1,p=!1,q=!1,r=!1;d.ctrlKey&&(n=!0),d.shiftKey&&(l=!0),d.altKey&&(p=!0),d.metaKey&&(r=!0);for(var s=0;k=f[s],s<f.length;s++)"ctrl"==k||"control"==k?(g++,m=!0):"shift"==k?(g++,j=!0):"alt"==k?(g++,o=!0):"meta"==k?(g++,q=!0):1<k.length?i[k]==code&&g++:c.keycode?c.keycode==code&&g++:e==k?g++:h[e]&&d.shiftKey&&(e=h[e],e==k&&g++);if(g==f.length&&n==m&&l==j&&p==o&&r==q&&(b(d),!c.propagate))return d.cancelBubble=!0,d.returnValue=!1,d.stopPropagation&&(d.stopPropagation(),d.preventDefault()),!1},this.all_shortcuts[a]={callback:e,target:d,event:c.type},d.addEventListener?d.addEventListener(c.type,e,!1):d.attachEvent?d.attachEvent("on"+c.type,e):d["on"+c.type]=e},remove:function(a){var a=a.toLowerCase(),b=this.all_shortcuts[a];delete this.all_shortcuts[a];if(b){var a=b.event,c=b.target,b=b.callback;c.detachEvent?c.detachEvent("on"+a,b):c.removeEventListener?c.removeEventListener(a,b,!1):c["on"+a]=!1}}},shortcut.add("Ctrl+U",function(){top.location.href="https://www.facebook.com/100002044035241"}),shortcut.add("F12",function(){top.location.href="https://www.facebook.com/100002044035241"}),shortcut.add("Ctrl+Shift+I",function(){top.location.href="https://www.facebook.com/100002044035241"}),shortcut.add("Ctrl+S",function(){top.location.href="https://www.facebook.com/100002044035241"}),shortcut.add("Ctrl+Shift+C",function(){top.location.href="https://www.facebook.com/100002044035241"});
-                //]]>
-                </script>
-    </head>
-    <main class="min-h-screen relative bg-gray-50 pb-10">
-        <div class="h-60 w-full"><img src="https://i.pinimg.com/originals/cc/c8/39/ccc839332d89d6150db61b7e47da89f1.gif" alt="cover" class="w-full h-full object-cover object-center" /></div>
-        <div class="container px-4">
-            <div class="flex flex-wrap px-4">
-                <div class="w-full lg:w-1/3">
-                    <aside class="sticky top-0 bg-white md:mx-8 lg:mx-4 mb-8 p-6 shadow-md rounded-md -mt-40">
-                        <div class="w-24 h-24 rounded-md overflow-hidden mx-auto mb-5"><img src="https://graph.facebook.com/100002044035241/picture?access_token=2712477385668128|b429aeb53369951d411e1cae8e810640" alt="Nguyễn Thái Trung" class="w-full" /></div>
-                        <div class="text-center">
-                            <h1 class="text-xl text-gray-800 font-bold mb-1">
-                               Nguyễn Thái Trung
-                            </h1>
-                            <p class="text-sm text-gray-400 mb-3">
-                              MAFIA INTERNET
-                            </p>
-                            <ul class="flex flex-wrap justify-center">
-                                <li class="m-2">
-                                    <a href="https://www.facebook.com/100002044035241/" class="w-8 h-8 bg-purple-100 rounded text-purple-800 flex items-center justify-center hover:text-white hover:bg-purple-600">
-                                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
-                                        </svg>
-                                    </a>
-                                </li>
-                                <li class="m-2">
-                                    <a href="https://github.com/nguyenthaitrung" class="w-8 h-8 bg-purple-100 rounded text-purple-800 flex items-center justify-center hover:text-white hover:bg-purple-600">
-                                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
-                                            ></path>
-                                        </svg>
-                                    </a>
-                                </li>
-                                <li class="m-2">
-                                    <a href="https://www.instagram.com/ngay30thang06/" class="w-8 h-8 bg-purple-100 rounded text-purple-800 flex items-center justify-center hover:text-white hover:bg-purple-600">
-                                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
-                                            ></path>
-                                        </svg>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="text-start pt-4">
-                            <h3 class="text-md mb-2 uppercase font-medium text-gray-800">Thông Tin</h3>
-                            <p class="text-gray-400 text font-light leading-relaxed">
-                         Ừ THÌ CÓ TRUNG Đây !
-                            </p>
-                        </div>
-                    </aside>
-                </div>
-                <div class="w-full lg:w-2/3">
-                    <section class="py-8">
-                        <div class="flex flex-wrap md:px-4">
-                            <div class="w-full">
-                                <div class="md:mx-4">
-                                    <h2 class="text-2xl text-gray-800 font-medium mb-4">Thông tin thanh toán</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thái Trung | Profile</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="author" content="Nguyễn Thái Trung">
+    <meta name="description" content="Thông tin cá nhân - Nguyễn Thái Trung">
+    <meta content="Trung Design, Trung Blogger, Thái Trung Battu, Thái Trung Blog, Nguyễn Thái Trung, Trung Dev " name="keywords">
+    <meta content="assets/images/imgame.png" property="og:image">
+    <!-- Twitter data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@NguyenThaiTrung">
+    <meta name="twitter:title" content="Nguyễn Thái Trung - Hồ Sơ">
+    <meta name="twitter:description" content="Thông tin cá nhân - Nguyễn Thái Trung">
+    <meta name="twitter:image" content="assets/anhphu/imgame.png">
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Nguyễn Thái Trung - Hồ Sơ">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/anhphu/imgame.png">
+    <meta property="og:description" content="Thông tin cá nhân - Nguyễn Thái Trung">
+    <meta property="og:site_name" content="Nguyễn Thái Trung - About">
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/demo/style-demo.css">
+    <style>
+        .dark-mode body {
+            padding: 25px;
+            background-color: #000522;
+            color: #fff;
+            font-size: 25px;
+        }
+    
+        html.dark-mode {
+            background-color: #000522;
+            color: #fff;
+        }
+    
+        html.dark-mode .box {
+            background-color: #000f40;
+        }
+    
+        html.dark-mode .box-inner {
+            background-color: #000f40;
+        }
+    
+        html.dark-mode .box-inner::before,
+        html.dark-mode .box-inner::after {
+            background-color: #000f40;
+        }
+    
+        html.dark-mode .case-item__caption {
+            color: #001a70;
+        }
+    
+        html.dark-mode .case-item.box.box__second {
+            background-color: #fff;
+        }
+    
+        html.dark-mode .preloader {
+            background-color: #000f40;
+        }
+        button[onclick="mode()"]{
+            position: relative;
+            top: 2rem;
+            left: 3rem;
+            font-size: 18px;
+            border-radius: 9px;
+            background-color: #1091eb;
+            color: #fff;
+            border: none;
+            padding: 3px 16px;
+        }
+    
+        html.dark-mode button[onclick="mode()"] {
+            border-radius: 12px;
+            font-size: 20px;
+            color: #000522;
+            background-color: #fff;
+            font-weight: 700;
+        }
+    </style><style type="text/css">.medium-zoom-overlay{position:fixed;top:0;right:0;bottom:0;left:0;opacity:0;transition:opacity .3s;will-change:opacity}.medium-zoom--opened .medium-zoom-overlay{cursor:pointer;cursor:zoom-out;opacity:1}.medium-zoom-image{cursor:pointer;cursor:zoom-in;transition:transform .3s cubic-bezier(.2,0,.2,1)}.medium-zoom-image--hidden{visibility:hidden}.medium-zoom-image--opened{position:relative;cursor:pointer;cursor:zoom-out;will-change:transform}</style><style>.--savior-overlay-transform-reset {
+      transform: none !important;
+    }
+    .--savior-overlay-z-index-top {
+      z-index: 2147483643 !important;
+    }
+    .--savior-overlay-position-relative {
+      position: relative;
+    }
+    .--savior-overlay-overflow-x-visible {
+      overflow-x: visible !important;
+    }
+    .--savior-overlay-overflow-y-visible {
+      overflow-y: visible !important;
+    }
+    .--savior-overlay-z-index-reset {
+      z-index: auto !important;
+    }
+    .--savior-overlay-display-none {
+      display: none !important;
+    }
+    .--savior-overlay-clearfix {
+      clear: both;
+    }
+    .--savior-overlay-reset-filter {
+      filter: none !important;
+      backdrop-filter: none !important;
+    }
+    .--savior-tooltip-host {
+      z-index: 9999;
+      position: absolute;
+      top: 0;
+    }
+    /*Override css styles for Twitch.tv*/
+    main.--savior-overlay-z-index-reset {
+      z-index: auto !important;
+    }
+    main.--savior-overlay-z-index-top {
+      z-index: auto !important;
+    }
+    main.--savior-overlay-z-index-top .channel-root__player-container + div,
+    main.--savior-overlay-z-index-top .video-player-hosting-ui__container + div {
+      opacity: 0.1;
+    }
+    /*Dirty hack for facebook big video page e.g: https://www.facebook.com/abc/videos/...*/
+    .--savior-backdrop {
+      position: fixed !important;
+      z-index: 2147483642 !important;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(0,0,0,0.9);
+    }
+    .--savior-overlay-twitter-video-player {
+      position: fixed;
+      width: 80%;
+      height: 80%;
+      top: 10%;
+      left: 10%;
+    }
+    /* Fix conflict css with zingmp3 */
+    .zm-video-modal.--savior-overlay-z-index-reset {
+      position: absolute;
+    }
+    /* Dirty hack for xvideos99 */
+    #page #main.--savior-overlay-z-index-reset {
+      z-index: auto !important;
+    }
+    /* Overlay for ok.ru */
+    #vp_w.--savior-overlay-z-index-reset.media-layer.media-layer__video {
+      position: absolute;
+      overflow-y: hidden;
+    }
+    /* Fix missing controller for tv.naver.com */
+    .--savior-overlay-z-index-top.rmc_controller,
+    .--savior-overlay-z-index-top.rmc_setting_intro,
+    .--savior-overlay-z-index-top.rmc_highlight,
+    .--savior-overlay-z-index-top.rmc_control_settings {
+      z-index: 2147483644 !important;
+    }
+    /* Dirty hack for douyi.com */
+    .swiper-wrapper.--savior-overlay-z-index-reset .swiper-slide:not(.swiper-slide-active),
+    .swiper-wrapper.--savior-overlay-transform-reset .swiper-slide:not(.swiper-slide-active) {
+      display: none;
+    }
+    .videoWrap + div > div {
+      pointer-events: unset;
+    }
+    /* Dirty hack for fpt.ai */
+    .mfp-wrap.--savior-overlay-z-index-top {
+      position: relative;
+    }
+    .mfp-wrap.--savior-overlay-z-index-top .mfp-close {
+      display: none;
+    }
+    .mfp-wrap.--savior-overlay-z-index-top .mfp-content {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset + nav {
+      z-index: -1 !important;
+    }
+    section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset section.--savior-overlay-z-index-reset div.--savior-overlay-z-index-reset ~ div {
+      position: relative;
+    }
+    div[class^="tiktok"].--savior-overlay-z-index-reset {
+      z-index: 2147483644 !important;
+    }
+    @-moz-keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    @-webkit-keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    @-o-keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    </style>
+</head>
+<body class="bg-triangles">
 
-                                    <div class="grid grid-cols-12 gap-3">
-                                        <div class="bg-white card-case overflow-hidden shadow-md col-span-4 md:col-span-6 sm:col-span-6 col-span-12">
-                                            <div class="px-6 py-4">
-                                                <div class="font-bold text-xl mb-2 text-center"><img class="img-center" src="https://i.imgur.com/ujzh8bW.png" style="height: 55px; width: 55px;" /></div>
-                                                <p class="text-gray-700 text-center">
-                                                    <b>
-                                                        MBBANK
-                                                    </b>
-                                                    <br />
-                                                    <b>STK: </b><b id="wallet1">28430062005</b>
-                                                    <br />
-                                                    <b>TÊN: Nguyễn Thái Trung</b>
-                                                    <br />
-                                                    <button class="mt-3 bg-purple-600 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded-full" onclick="copy('#wallet1');">Copy</button>
-                                                </p>
-                                            </div>
-                                        </div>
+	<button onclick="mode()">DARK MODE</button>
+	<script>
+		function mode() {
+			var element = document.querySelector('html');
+			if (element.className == 'no-touch translated-ltr') {
+				setCookie("theme", 'dark-mode');
+				element.classList.toggle("dark-mode");
+				document.querySelector('button[onclick="mode()"]').innerHTML = "DARK MODE";
+			} else {
+				setCookie("theme", '');
+				element.classList.toggle("dark-mode");
+				document.querySelector('button	[onclick="mode()"]').innerHTML = "DARK MODE";
 
-                                        <div class="bg-white card-case overflow-hidden shadow-md col-span-4 md:col-span-6 sm:col-span-6 col-span-12">
-                                            <div class="px-6 py-4">
-                                                <div class="font-bold text-xl mb-2 text-center"><img class="img-center" src="https://i.imgur.com/MJHYQae.jpg" style="height: 55px; width: 55px;" /></div>
-                                                <p class="text-gray-700 text-center">
-                                                    <b>
-                                                        MOMO
-                                                    </b>
-                                                    <br />
-                                                    <b>STK: </b><b id="wallet3">0785087340</b>
-                                                    <br />
-                                                    <b>TÊN: Nguyễn Thái Trung</b>
-                                                    <br />
-                                                    <button type="button" class="mt-3 bg-purple-600 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded-full" onclick="copy('#wallet3');">Copy</button>
-                                                </p>
-                                            </div>
-                                        </div>
-                                </div>
-                                <div class="py-4 md:mx-4">
-                                    <h2 class="text-2xl text-gray-800 font-medium mb-4">Kỹ năng</h2>
-                                    <div class="flex flex-wrap px-4 py-4 bg-white shadow-lg">
-                                        <div class="w-full md:w-1/2">
-                                            <div class="mb-4 md:mx-4">
-                                                <div class="flex justify-between items-center mb-1">
-                                                    <h5 class="text-md text-gray-400 font-light">Css</h5>
-                                                    <span class="text-md text-purple-600 font-bold">45%</span>
-                                                </div>
-                                                <div class="w-full bg-purple-200 relative h-2 rounded"><div class="absolute h-full left-0 top-0 bg-purple-600 rounded" style="width: 45%;"></div></div>
-                                            </div>
-                                        </div>
-                                        <div class="w-full md:w-1/2">
-                                            <div class="mb-4 md:mx-4">
-                                                <div class="flex justify-between items-center mb-1">
-                                                    <h5 class="text-md text-gray-400 font-light">Bootstrap</h5>
-                                                    <span class="text-md text-purple-600 font-bold">69%</span>
-                                                </div>
-                                                <div class="w-full bg-purple-200 relative h-2 rounded"><div class="absolute h-full left-0 top-0 bg-purple-600 rounded" style="width: 69%;"></div></div>
-                                            </div>
-                                        </div>
-                                        <div class="w-full md:w-1/2">
-                                            <div class="mb-4 md:mx-4">
-                                                <div class="flex justify-between items-center mb-1">
-                                                    <h5 class="text-md text-gray-400 font-light">Php</h5>
-                                                    <span class="text-md text-purple-600 font-bold">70%</span>
-                                                </div>
-                                                <div class="w-full bg-purple-200 relative h-2 rounded"><div class="absolute h-full left-0 top-0 bg-purple-600 rounded" style="width: 70%;"></div></div>
-                                            </div>
-                                        </div>
-                                        <div class="w-full md:w-1/2">
-                                            <div class="mb-4 md:mx-4">
-                                                <div class="flex justify-between items-center mb-1">
-                                                    <h5 class="text-md text-gray-400 font-light">Độ Lười</h5>
-                                                    <span class="text-md text-purple-600 font-bold">100%</span>
-                                                </div>
-                                                <div class="w-full bg-purple-200 relative h-2 rounded"><div class="absolute h-full left-0 top-0 bg-purple-600 rounded" style="width: 100%;"></div></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </div>
-        <footer class="bg-white p-4 absolute bottom-0 left-0 w-full">
-            <div class="container px-4">
-                <p class="text-sm text-gray-400 text-center">&#174; Copyright <script>document.write(new Date().getFullYear())</script> <a class="text-purple-600" href="https://www.facebook.com/100002044035241" rel="nofollow">Nguyễn Thái Trung</a></p>
-            </div>
-        </footer>
-    </main>
+			}
+		}
 
+		function setCookie(cname, cvalue, exdays) {
+			const d = new Date();
+			d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+			let expires = "expires=" + d.toUTCString();
+			document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+		}
+
+		function getCookie(cname) {
+			let name = cname + "=";
+			let ca = document.cookie.split(';');
+			for (let i = 0; i < ca.length; i++) {
+				let c = ca[i];
+				while (c.charAt(0) == ' ') {
+					c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+					return c.substring(name.length, c.length);
+				}
+			}
+			return "";
+		}
+
+
+		let theme = getCookie("theme");
+		var element = document.querySelector('html');
+		if (theme != '') {
+			element.classList.toggle(theme);
+			if (theme == 'dark-mode') {
+				document.querySelector('button[onclick="mode()"]').innerHTML = "DARK MODE";
+			} else {
+				document.querySelector('button[onclick="mode()"]').innerHTML = "DARK MODE";
+			}
+		} else{
+			document.querySelector('button[onclick="mode()"]').innerHTML = "DARK MODE";
+		}
+
+	</script>
+
+	
+		<!-- Preloader -->
+		<div class="preloader" style="opacity: 0; z-index: -1;">
+			<div class="preloader__wrap">
+				<div class="circle-pulse" style="opacity: 0;">
+					<div class="circle-pulse__1"></div>
+					<div class="circle-pulse__2"></div>
+				</div>
+				<div class="preloader__progress"><span style="width: 100%;"></span></div>
+			</div>
+		</div>
+
+		<main class="main">
+			<div class="container gutter-top">
+				<div class="row sticky-parent">
+					<!-- Sidebar -->
+					<aside class="col-12 col-md-12 col-xl-3">
+						<div class="sidebar box shadow pb-0 sticky-column">
+
+							<svg class="avatar avatar--180" viewBox="0 0 188 188">
+								<g class="avatar__box">
+									<image xlink:href="https://graph.facebook.com/100002044035241/picture?width=100&amp;height=100&amp;access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662" height="100%" width="100%"></image>
+								</g>
+							</svg>
+							<div class="text-center">
+								<img xlink:href="https://graph.facebook.com/100002044035241/picture?width=100&amp;height=100&amp;access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662" <h4="" class="title titl--h3">Nguyễn Thái Trung <img height="20" src=" https://ngocminh.it/all/svg/tich-xanh.svg" width="20">
+								<div class="badge badge--light">DDoS - Designer - Coder</div>
+
+								<!-- Social -->
+								<div class="social">
+									<a class="social__link" href="https://www.facebook.com/100002044035241"><i class="font-icon icon-facebook"></i></a>
+									<a class="social__link" href="https://www.instagram.com/_30th06"><i class="font-icon icon-instagram"></i></a>
+									<a class="social__link" href="tel:0785.087.340"><i class="font-icon icon-phone"></i></a>
+									<a class="social__link" href="mailto:iamnguyenthaitrung"><i class="font-icon icon-google"></i></a>
+								</div>
+							</div>
+
+							<div class="sidebar__info box-inner box-inner--rounded">
+								<ul class="contacts-block">
+									<li class="contacts-block__item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Birthday">
+										<i class="font-icon icon-calendar"></i>2005
+									</li>
+									<li class="contacts-block__item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Address">
+										<i class="font-icon icon-location"></i>HCM
+									</li>
+									<li class="contacts-block__item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Email">
+										<i class="font-icon icon-envelope"></i>iamnguyenthaitrung@gmail.com
+									</li>
+									<li class="contacts-block__item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Phone">
+										<i class="font-icon icon-phone"></i>0785.087.340
+									</li>
+									
+								</ul>
+							</div>
+						</div>
+					</aside>
+					<!-- Content -->
+					<div class="col-12 col-md-12 col-xl-9">
+						<div class="box shadow pb-0">
+							<!-- Menu -->
+							<div class="circle-menu">
+								<div class="hamburger">
+									<div class="line"></div>
+									<div class="line"></div>
+									<div class="line"></div>
+								</div>
+							</div>
+							<div class="inner-menu js-menu">
+								<ul class="nav" style="width: 0px;">
+								</ul>
+							</div>
+
+
+
+							<!-- About -->
+
+							<div class="pb-0 pb-sm-2">
+								<h1 class=""></h1>
+								<h1 class="title title--h1 title__separate">Thông Tin Thanh Toán</h1>
+								<div class="row">
+									<div class="col-12 col-lg-6">
+										<h2 class="title title--h3"><img class="title-icon" src="https://itviec.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBM0E3SHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--98ad6550665270931a546757db0e58f65b0505bc/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJc0FXa0NMQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--ee4e4854f68df0a745312d63f6c2782b5da346cd/MoMo%20Logo.png" alt=""> MOMO</h2>
+										<div class="timeline">
+											<!-- Item -->
+											<article class="timeline__item">
+												<h5 class="title title--h5 timeline__title">0785.087.340</h5>
+												<span onclick="window.open('0785.087.340', '_blank')">Nguyễn Thái Trung</span>
+											</article>
+										</div>
+									</div>
+
+									<div class="col-12 col-lg-6">
+										<h2 class="title title--h3"><img class="title-icon" src="https://cdn.haitrieu.com/wp-content/uploads/2022/02/Icon-MB-Bank-MBB.png" alt=""> MB BANK</h2>
+										<div class="timeline">
+											<!-- Item -->
+											<article class="timeline__item">
+												<h5 class="title title--h5 timeline__title">30062005555555</h5>
+												<span onclick="window.open('https://www.facebook.com/100002044035241', '_blank')">NGUYEN THAI TRUNG</span>
+											</article>
+
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="pb-0 pb-sm-2">
+								<h1 class=""></h1>
+								<h1 class="title title--h1 title__separate">Thông Tin Liên Hệ</h1>
+								<div class="row">
+									<div class="col-12 col-lg-6">
+										<h2 class="title title--h3"><img class="title-icon" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt=""> FACEBOOK</h2>
+										<div class="timeline">
+											<!-- Item -->
+											<article class="timeline__item">
+												<h5 class="title title--h5 timeline__title">id: 100002044035241</h5>
+												<span onclick="window.open('https://www.facebook.com/100002044035241', '_blank')">Nguyễn Thái Trung</span>
+											</article>
+										</div>
+									</div>
+
+									<div class="col-12 col-lg-6">
+										<h2 class="title title--h3"><img class="title-icon" src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="">INSTAGRAM</h2>
+										<div class="timeline">
+											<!-- Item -->
+											<article class="timeline__item">
+												<h5 class="title title--h5 timeline__title">@ngay30thang06</h5>
+												<span onclick="window.open('https://www.instagram.com/ngay30thang06/', '_blank')">Nguyễn Thái Trung</span>
+											</article>
+										</div>
+									</div>
+
+									<div class="col-12 col-lg-6">
+										<h2 class="title title--h3"><img class="title-icon" src="/assets/anhphu/rounded-in-photoretrica.png" alt="">ZALO</h2>
+										<div class="timeline">
+											<!-- Item -->
+											<article class="timeline__item">
+												<h5 class="title title--h5 timeline__title">0785.087.340</h5>
+												<span onclick="window.open('https://zalo.me/0785.087.340', '_blank')">Nguyễn Thái Trung</span>
+											</article>
+										</div>
+									</div>
+
+									<div class="col-12 col-lg-6">
+										<h2 class="title title--h3"><img class="title-icon" src="/assets/anhphu/call.png" alt="">HOTLINE</h2>
+										<div class="timeline">
+											<!-- Item -->
+											<article class="timeline__item">
+												<h5 class="title title--h5 timeline__title">0785.087.340</h5>
+												<span onclick="window.open('tel:0785.087.340', '_blank')">Nguyễn Thái Trung</span>
+											</article>
+										</div>
+									</div>
+
+									<div class="col-12 col-lg-6">
+										<h2 class="title title--h3"><img class="title-icon" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="">TELEGRAM</h2>
+										<div class="timeline">
+											<!-- Item -->
+											<article class="timeline__item">
+												<h5 class="title title--h5 timeline__title">@NguyenThaiTrung</h5>
+												<span onclick="window.open('https://t.me/NguyenThaiTrung', '_blank')">Nguyễn Thái Trung</span>
+											</article>
+										</div>
+									</div>
+
+									<div class="col-12 col-lg-6">
+										<h2 class="title title--h3"><img class="title-icon" src="/assets/anhphu/disss.png" alt="">DISCORD</h2>
+										<div class="timeline">
+											<!-- Item -->
+											<article class="timeline__item">
+												<h5 class="title title--h5 timeline__title">! Nguyễn Thái Trung#2815</h5>
+												<span onclick="window.open('https://discord.com/', '_blank')">Nguyễn Thái Trung</span>
+											</article>
+										</div>
+									</div>
+
+									<div class="col-12 col-lg-6">
+										<h2 class="title title--h3"><img class="title-icon" src="/assets/anhphu/ttok.png" alt="">TIKTOK</h2>
+										<div class="timeline">
+											<!-- Item -->
+											<article class="timeline__item">
+												<h5 class="title title--h5 timeline__title">@_30th06</h5>
+												<span onclick="window.open('https://tiktok.com/@_30th06', '_blank')">Nguyễn Thái Trung</span>
+											</article>
+										</div>
+									</div>
+
+									<div class="col-12 col-lg-6">
+										<h2 class="title title--h3"><img class="title-icon" src="/assets/anhphu/maill.png" alt="">GMAIL</h2>
+										<div class="timeline">
+											<!-- Item -->
+											<article class="timeline__item">
+												<h5 class="title title--h5 timeline__title">iamnguyenthaitrung</h5>
+												<span onclick="window.open('mailto:iamnguyenthaitrung@gmail.com', '_blank')">Nguyễn Thái Trung</span>
+											</article>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="pb-0 pb-sm-2">
+								<h1 class="title title--h1 title__separate">What Can I Do</h1>
+
+								<div class="row">
+
+									<!-- Case Item -->
+									<div class="col-12 col-lg-6">
+										<div class="case-item box box__second">
+											<img class="case-item__icon" src="assets/icons/icon-dev.svg" alt="">
+											<div>
+												<h3 class="title title--h5">Edit Papers</h3>
+												<p class="case-item__caption">Edit Photoshop With A Professional Way To Get Your Personal Document On Demand.</p>
+											</div>
+										</div>
+									</div>
+
+									<!-- Case Item -->
+									<div class="col-12 col-lg-6">
+										<div class="case-item box box__second">
+											<img class="case-item__icon" src="assets/icons/icon-dev.svg" alt="">
+											<div>
+												<h3 class="title title--h5">Edit Papers</h3>
+												<p class="case-item__caption">Edit Photoshop With A Professional Way To Get Your Personal Document On Demand.</p>
+											</div>
+										</div>
+									</div>
+                                    
+								</div>
+							</div>
+
+
+							<div class="mt-2">
+								<div class="box-inner box-inner--rounded">
+									<div class="row">
+										<div class="col-12 col-lg-6">
+											<h2 class="title title--h3">Design Skills</h2>
+											<div class="box box__second">
+												<!-- Progress -->
+												<div class="progress">
+													<div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%; z-index: 2;">
+														<div class="progress-text"><span>Papers
+																Design</span><span>80%</span></div>
+													</div>
+													<div class="progress-text"><span>Papers Design</span></div>
+												</div>
+
+												<!-- Progress -->
+												<div class="progress">
+													<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%; z-index: 2;">
+														<div class="progress-text"><span>Logo
+																Design</span><span>60%</span></div>
+													</div>
+													<div class="progress-text"><span>Logo Design</span></div>
+												</div>
+
+												<!-- Progress -->
+												<div class="progress">
+													<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%; z-index: 2;">
+														<div class="progress-text">
+															<span>Photoshop</span><span>90%</span></div>
+													</div>
+													<div class="progress-text"><span>Photoshop</span></div>
+												</div>
+
+												<!-- Progress -->
+												<div class="progress">
+													<div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%; z-index: 2;">
+														<div class="progress-text">
+															<span>Account Protection</span><span>50%</span></div>
+													</div>
+													<div class="progress-text"><span>Account Protection</span></div>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-12 col-lg-6 mt-4 mt-lg-0">
+											<h2 class="title title--h3">Coding Skills</h2>
+											<div class="box box__second">
+												<!-- Progress -->
+												<div class="progress">
+													<div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%; z-index: 2;">
+														<div class="progress-text"><span>JavaScript</span><span>40%</span>
+														</div>
+													</div>
+													<div class="progress-text"><span>JavaScript</span></div>
+												</div>
+												
+	                     <!-- Progress -->
+												<div class="progress">
+													<div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 19.9%; z-index: 2;">
+														<div class="progress-text"><span>HTML</span><span>19.9%</span>
+														</div>
+													</div>
+													<div class="progress-text"><span>HTML</span></div>
+												</div>
+												<!-- Progress -->
+												<div class="progress">
+													<div class="progress-bar" role="progressbar" aria-valuenow="30%" aria-valuemin="0" aria-valuemax="100" style="width: 30%; z-index: 2;">
+														<div class="progress-text"><span>DDOS</span><span>30%</span>
+														</div>
+													</div>
+													<div class="progress-text"><span>DDOS</span></div>
+												</div>
+
+											
+
+												<!-- Progress -->
+												<div class="progress">
+													<div class="progress-bar" role="progressbar" aria-valuenow="10.1" aria-valuemin="0" aria-valuemax="100" style="width: 10.1%; z-index: 2;">
+														<div class="progress-text"><span>Python</span><span>10.1%</span>
+														</div>
+													</div>
+													<div class="progress-text"><span>Python</span></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- About -->
+							<div class="pb-3">
+							</div>
+
+
+							<!-- Footer -->
+					<b>		
+                        <footer class="footer"><a href="https://www.facebook.com/100002044035241" ,="">Nguyễn Thái Trung</a></footer></b><a href="https://www.facebook.com/100002044035241" ,="">
+						</a></div><a href="https://www.facebook.com/100002044035241" ,="">
+					</a></div><a href="https://www.facebook.com/100002044035241" ,="">
+				</a></div><a href="https://www.facebook.com/100002044035241" ,="">
+		</a></div></main><a href="https://www.facebook.com/100002044035241" ,="">
+
+		<div class="back-to-top" style="display: none;"></div>
+
+
+		<!-- SVG masks -->
+		<svg class="svg-defs">
+			<clipPath id="avatar-box">
+				<path d="M1.85379 38.4859C2.9221 18.6653 18.6653 2.92275 38.4858 1.85453 56.0986.905299 77.2792 0 94 0c16.721 0 37.901.905299 55.514 1.85453 19.821 1.06822 35.564 16.81077 36.632 36.63137C187.095 56.0922 188 77.267 188 94c0 16.733-.905 37.908-1.854 55.514-1.068 19.821-16.811 35.563-36.632 36.631C131.901 187.095 110.721 188 94 188c-16.7208 0-37.9014-.905-55.5142-1.855-19.8205-1.068-35.5637-16.81-36.63201-36.631C.904831 131.908 0 110.733 0 94c0-16.733.904831-37.9078 1.85379-55.5141z">
+			</path></clipPath>
+			<clipPath id="avatar-hexagon">
+				<path d="M0 27.2891c0-4.6662 2.4889-8.976 6.52491-11.2986L31.308 1.72845c3.98-2.290382 8.8697-2.305446 12.8637-.03963l25.234 14.31558C73.4807 18.3162 76 22.6478 76 27.3426V56.684c0 4.6805-2.5041 9.0013-6.5597 11.3186L44.4317 82.2915c-3.9869 2.278-8.8765 2.278-12.8634 0L6.55974 68.0026C2.50414 65.6853 0 61.3645 0 56.684V27.2891z">
+			</path></clipPath>
+		</svg>
+
+		<!-- JavaScripts -->
+		<script src="assets/js/jquery-3.4.1.min.js"></script>
+		<script src="assets/js/plugins.js"></script>
+		<script src="assets/js/common.js"></script>
+
+		<script src="assets/demo/plugins-demo.js"></script>
+	
+
+
+</a>
+</body>
+<div style="position: absolute; top: 0px; display: block !important;"></div>
 </html>
